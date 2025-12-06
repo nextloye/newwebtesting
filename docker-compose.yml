@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  zyntrix-hosting:
+    build: .
+    ports:
+      - "25569:25569"
+    environment:
+      - PORT=25569
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
